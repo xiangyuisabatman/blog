@@ -1,14 +1,14 @@
 <template name="canvas-slider">
 	<view class="slider-container">
 		<text class="time">2019.12.08</text>
-		<text class="title">{{detailInfo.body_data_options.name}}</text>
+		<text class="title">{{name}}</text>
 		
 		<view class="content" id="content">
 			<view class="ruler-title">
 				<view class="ruler-parameter">
-					<div id='ruler-title' @click="fucminus">-</div>
-					<div id='ruler-num' style="font: bold 24px/50px 微软雅黑;">{{numNode || 0}} {{detailInfo.body_data_options.unit}}</div>
-					<div id='ruler-unit' @click="fucplus">+</div>
+					<div id='rulerTitle' class="rulerTitle" @click="fucminus">-</div>
+					<div id='ruler-num' class="ruler-num" style="font: bold 24px/50px 微软雅黑;">{{numNode || 0}} {{unit}}</div>
+					<div id='ruler-unit' class="ruler-unit" @click="fucplus">+</div>
 				</view>
 			</view>
 			<view class="ruler-contain">
@@ -33,22 +33,6 @@
 <script>
 	export default {
 		name: 'canvas-slider',
-		props: {
-			detailInfo: {
-				type: Object,
-				default: () => {
-					return {
-						body_data_options: {
-							name: '体重',
-							unit: 'kg'
-						},
-						info: {
-							num: 0
-						}
-					}
-				}
-			}
-		},
 		data() {
 			return {
 				left: 10,
@@ -56,6 +40,8 @@
 				maxNum: 400,
 				minNum: 0,
 				initNum: 0,
+				name: '',
+				unit: '',
 				decimalWei: 0,
 				cellNum: 10,
 				clientWidth: 375,
@@ -385,18 +371,18 @@
 				text-align: center;
 				box-sizing: border-box;
 				margin: 0 auto;
-				#ruler-title {
+				.rulerTitle {
 					color: #ff4789;
 					float: left;
 					font-weight: bold;
 					font-size: 24px;
 					line-height: 60px;
 				}
-				#ruler-num {
+				.ruler-num {
 					color:#FF4789;
 					display:inline-block;
 				}
-				#ruler-unit {
+				.ruler-unit {
 					color:#FF4789;
 					font-weight:bold;
 					line-height: 60px;
