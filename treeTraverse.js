@@ -156,6 +156,6 @@ newTree.createTree(tree)
 // newTree.preOrderTraverse(tree)
 // newTree.inOrderTraverse(tree)
 // newTree.postOrderTraverse(tree)
-newTree.levelOrderTraverse(tree)
-// console.log(tree)
+// newTree.levelOrderTraverse(tree)
+console.log(tree)
 
